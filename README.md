@@ -8,9 +8,7 @@ Seamlessly track attendance, assess performance, and provide feedback. <br>
 Access records, view marks, and communicate effortlessly.
 </h3>
 
-<p>
-  <a href="https://www.linkedin.com/in/rohith-uppunuthula/">LinkedIn</a>
-</p>
+
 
 
 # About
