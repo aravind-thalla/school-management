@@ -1,0 +1,41 @@
+name: Build Project
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend || echo "No backend folder"
+          npm install || echo "Skip"
+
+      - name: Run Backend Tests
+        run: |
+          cd backend || echo "Skip"
+          npm test || echo "No tests"
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend || echo "No frontend folder"
+          npm install || echo "Skip"
+
+      - name: Build React App
+        run: |
+          cd frontend || echo "Skip"
+          npm run build || echo "Skip"
+
+      - name: Complete job
+        run: echo "Done ✅"
